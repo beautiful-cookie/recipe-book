@@ -1,0 +1,44 @@
+header { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    overflow: hidden; 
+} 
+
+.headerBtnsWrapper { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    overflow: hidden; 
+}
+
+.btn {
+    text-align: center; 
+    padding: 10px;
+    flex: 50%;
+    color: black; 
+    font-weight: 300; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 1px solid black; 
+    transition: color, border-right, border-left, 0.3s;
+} 
+
+.searchBtn { 
+    border-right: 1px solid black; 
+}
+.recipesBtn { 
+    border-left: 1px solid black; 
+}
+
+.searchBtn:hover {
+    color: green; 
+    border-color: green; 
+    text-shadow: 0 0 5px rgb(34, 236, 34); 
+} 
+.recipesBtn:hover { 
+    color: rgb(38, 0, 255); 
+    border-color: rgb(38, 0, 255); 
+    text-shadow: 0 0 10px rgb(55, 20, 255); 
+}
