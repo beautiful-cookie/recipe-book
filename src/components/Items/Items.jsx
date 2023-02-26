@@ -1,13 +1,25 @@
 import styles from './Items.module.css'; 
 
-const Items = ({recipe}) => {
+const Items = ({item}) => {
   return(
     <div className={styles.itemWrapper}>
         <div className={styles.pictureWrapper}>
-          <img src={recipe.recipe.image} alt="" />
+          <img src={item.recipe.image} alt="" />
         </div>
-        <div className={styles.ingridients}>
 
+        <div className={styles.label}>
+          <span>{item.recipe.label}</span>
+        </div>
+
+        <div className={styles.ingridients}>
+          <details>
+            <ul className={styles.ingridientItemWrapper}>
+              {item.recipe.ingredients.map(element => (<li key={element.totalWeight}>{element.text}</li>))}
+            </ul>
+            <summary>
+              Ingridient         
+            </summary>
+          </details>
         </div>
     </div>
   )

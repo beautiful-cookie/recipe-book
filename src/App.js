@@ -52,7 +52,7 @@ function App() {
           <div className='itemsDisplayContainer'>
             {
               recipesArr.map((recipe, index) => (
-                <Items key={index} recipe={recipe} /> 
+                <Items key={index} item={recipe} /> 
               ))
             }
           </div>
