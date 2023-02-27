@@ -9,6 +9,7 @@ const Search = (props) => {
     } 
     const searchFunction = (event) => {
         event.preventDefault() 
+        props.search(search)
         setSearch("") 
     }
 

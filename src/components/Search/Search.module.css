@@ -33,7 +33,7 @@
     width: 15%;
     height: 10%;
     padding: 8px 12px; 
-    background: black;
+    background: rgb(37, 79, 218);
     color: white;
     outline: none;
     border: 1px solid rgba(255, 255, 255, 0.5);  
@@ -43,10 +43,10 @@
 
 .SearchButton:hover {
     background-color: rgba(255, 255, 255); 
-    border-color: black;  
-    color: black; 
-    text-shadow: 0 0 1px black; 
-    box-shadow: 0 0 2px black;
+    border-color: rgb(37, 79, 218);  
+    color: rgb(37, 79, 218); 
+    text-shadow: 0 0 1px rgb(37, 79, 218); 
+    box-shadow: 0 0 2px rgb(37, 79, 218);
 } 
 
 @media screen and (max-width: 500px) {

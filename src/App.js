@@ -11,11 +11,17 @@ const reducer = (state, action) => {
       return {
         ...state, 
         recipesArr: action.recipes 
+      } 
+    case 'SEARCH_RECIPES': 
+      return {
+        ...state, 
+        search: action.updateRecipes 
       }
     default: 
       return state; 
   } 
-} 
+}  
+
 
 const initialState = {
   search: 'carrot', 
@@ -39,15 +45,22 @@ function App() {
         console.log(recipesJSON.hits);
       }
     }) 
-  }, []) 
+  }, [state.search]) 
 
-  const {search, recipesArr} = state 
+  const search = (value) => {
+    dispatch({
+      type: 'SEARCH_RECIPES', 
+      updateRecipes: value 
+    })
+  }
+
+  const {recipesArr} = state 
 
   return (
     <div className="App">
       <div className='recipes-page-wrapper'>
         <Header /> 
-        <Search /> 
+        <Search search={search} /> 
         <div className='itemsContainer'>
           <div className='itemsDisplayContainer'>
             {
@@ -56,6 +69,9 @@ function App() {
               ))
             }
           </div>
+        </div>
+        <div className='PaginationWrapper'> 
+
         </div>
       </div>
     </div>

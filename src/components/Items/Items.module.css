@@ -42,13 +42,14 @@
     text-align: center; 
     width: 100%; 
     padding: 0 3px;
-    font-size: 2.5vw;
+    font-size: 2vw;
 } 
 
 .ingridients summary {
     list-style-type: none; 
     font-weight: 400; 
     text-shadow: 0 0 5px blue; 
+    font-size: 1.2vw;
     transition: transform, 0.3s;
 } 
 .ingridients details {
@@ -56,7 +57,7 @@
     text-align: center;
 } 
 .ingridients summary:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .ingridientItemWrapper { 
     display: flex; 
