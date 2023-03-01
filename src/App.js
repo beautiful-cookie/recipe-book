@@ -5,6 +5,15 @@ import Items from './components/Items/Items';
 import React, { useReducer, useEffect } from 'react';
 
 
+const setPagesCount = (count) => {
+  let tempArr = []
+  let totalPagesCount = Math.ceil(count / 20) 
+  for (let i = 1; i<=totalPagesCount; i++) {
+    tempArr.push(i)
+  } 
+  return tempArr 
+}
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_RECIPES': 
@@ -17,6 +26,16 @@ const reducer = (state, action) => {
         ...state, 
         search: action.updateRecipes 
       }
+    case 'NEXT_PAGE': 
+      return {
+        ...state, 
+        nextPage: action.nextPageHref 
+      } 
+    case 'SAVE_PREV_PAGE': 
+      return {
+        ...state, 
+        prevPage: action.prev 
+      }
     default: 
       return state; 
   } 
@@ -25,13 +44,15 @@ const reducer = (state, action) => {
 
 const initialState = {
   search: 'carrot', 
+  prevPage: '', 
+  nextPage: '', 
   recipesArr: [] 
 }
 
 function App() { 
 
   const [state, dispatch] = useReducer(reducer, initialState) 
-  const API = `https://api.edamam.com/api/recipes/v2?type=public&q=${state.search}&app_id=44654729&app_key=441fd11907adb74f6520c07afefa3676`
+  let API = `https://api.edamam.com/api/recipes/v2?type=public&q=${state.search}&app_id=44654729&app_key=441fd11907adb74f6520c07afefa3676`
 
   useEffect(() => { 
     fetch(API) 
@@ -42,10 +63,14 @@ function App() {
           type: 'SET_RECIPES', 
           recipes: recipesJSON.hits 
         })
-        console.log(recipesJSON.hits);
+        dispatch({
+          type: 'NEXT_PAGE', 
+          nextPage: recipesJSON._links.next.href 
+        })
+        console.log(recipesJSON);
       }
     }) 
-  }, [state.search]) 
+  }, [state.search, state.nextPage]) 
 
   const search = (value) => {
     dispatch({
@@ -53,6 +78,22 @@ function App() {
       updateRecipes: value 
     })
   }
+
+  const changePage = (paginate) => { 
+    console.log('test', paginate)
+    switch (paginate) {
+      case 'next': 
+        dispatch({
+          type: 'SAVE_PREV_PAGE', 
+          prev: API
+        }) 
+        API = state.nextPage 
+        return API 
+      case 'prev': 
+        API = state.prevPage 
+        return API 
+    }
+  } 
 
   const {recipesArr} = state 
 
@@ -68,10 +109,13 @@ function App() {
                 <Items key={index} item={recipe} /> 
               ))
             }
+            <div className='PaginationWrapper'> 
+              <div className='pagination'>
+                <div className='previousPage' onClick={() => {changePage('prev')}}> {'<'} </div>
+                <div className='nextPage' onClick={() => {changePage('next')}}> {'>'} </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className='PaginationWrapper'> 
-
         </div>
       </div>
     </div>
