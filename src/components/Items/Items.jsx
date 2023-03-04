@@ -20,6 +20,9 @@ const Items = ({item}) => {
               Ingridient         
             </summary>
           </details>
+          <div className={styles.moreDetails}>
+
+          </div>
         </div>
     </div>
   )
