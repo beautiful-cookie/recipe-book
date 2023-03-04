@@ -20,9 +20,9 @@ const Items = ({item}) => {
               Ingridient         
             </summary>
           </details>
-          <div className={styles.moreDetails}>
-
-          </div>
+        </div>
+        <div className={styles.moreDetails}>
+          <div className={styles.btnDetails}>Подробнее</div>
         </div>
     </div>
   )

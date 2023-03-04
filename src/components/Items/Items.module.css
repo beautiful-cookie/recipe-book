@@ -72,3 +72,27 @@
     padding: 0 20px; 
     margin-top: 1vh;
 }
+
+.moreDetails {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: 100%;  
+} 
+.btnDetails { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 70%;
+    height: 50px; 
+    background-color: rgb(12, 62, 226); 
+    color:white;  
+    border: 1px solid rgb(12, 62, 226); 
+    border-radius: 10px; 
+    margin-top: 5vh;
+    transition: background-color, 0.3s; 
+} 
+.btnDetails:hover {
+    background-color: white; 
+    color:rgb(12, 62, 226); 
+} 
