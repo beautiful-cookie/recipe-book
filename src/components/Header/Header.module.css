@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
 header { 
     display: flex; 
     justify-content: center; 
@@ -9,15 +11,51 @@ header {
 
 .headerBtnsWrapper { 
     display: flex; 
-    justify-content: center; 
+    justify-content: space-evenly; 
     align-items: center; 
     width: 100%; 
     overflow: hidden; 
+} 
+
+.empty {
+    flex: 10%; 
+}
+.logo { 
+    flex: 40%;
+    font-family: 'Shantell Sans', cursive; 
+    font-size: 150%; 
+    padding: 10px 0px;  
+} 
+.logo::first-letter {
+    color: green;  
+} 
+
+
+.tabs {
+    flex: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 120%;
+} 
+.searchTab, .favorites {
+    padding: 3px 10px; 
+    border-radius: 8px; 
+    transition: background-color, color, 0.3s;
+} 
+.searchTab:hover {
+    background-color: green; 
+    color: white; 
+}
+.favorites:hover {
+    background-color: rgb(204, 167, 0); 
+    color: white; 
 }
 
 .btn {
     text-align: center; 
-    padding: 10px;
+    padding: 20px 10px;
     flex: 50%;
     color: black; 
     font-weight: 300; 
@@ -36,10 +74,8 @@ header {
 .searchBtn:hover {
     color: green; 
     border-color: green; 
-    text-shadow: 0 0 5px rgb(34, 236, 34); 
 } 
 .recipesBtn:hover { 
     color: rgb(38, 0, 255); 
     border-color: rgb(38, 0, 255); 
-    text-shadow: 0 0 10px rgb(55, 20, 255); 
 } 

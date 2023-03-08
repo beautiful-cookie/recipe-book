@@ -22,7 +22,7 @@ const Search = (props) => {
     return (
         <div className={styles.SearchWrapper}> 
             <input placeholder='Поиск...' type="text" value={search} onChange={setSearchValue} onKeyPress={handleKeyPress} className={styles.Search} /> 
-            <input type='submit' value='Искать' onClick={searchFunction} className={styles.SearchButton} />
+            <input type='submit' value='Search' onClick={searchFunction} className={styles.SearchButton} />
         </div>
     )
 } 

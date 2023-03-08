@@ -18,11 +18,11 @@
     padding: 8px 12px; 
     width: 70%; 
     outline: none; 
-    transition: box-shadow, 0.3s; 
+    transition: border-color, 0.3s; 
 } 
 
 .Search:focus, .Search:hover  {
-    box-shadow: 0 0 5px #8b8b8b;
+    border-color: #007ACC; 
 } 
 
 .SearchButton {
