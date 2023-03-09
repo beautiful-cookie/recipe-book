@@ -1,8 +1,11 @@
 import './App.css'; 
 import Header from './components/Header/Header';
 import Search from './components/Search/Search'; 
-import Items from './components/Items/Items'; 
-import React, { useReducer, useEffect } from 'react';
+import ItemsContainer from './components/Items/itemsContainer';
+import React, { useReducer, useEffect } from 'react'; 
+import { Routes, Route, Link } from 'react-router-dom'; 
+import Recipe from './components/Recipe/Recipe';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 
 const reducer = (state, action) => {
@@ -124,21 +127,12 @@ const {recipesArr} = state
       <div className='recipes-page-wrapper'>
         <Header /> 
         <Search search={search} /> 
-        <div className='itemsContainer'>
-          <div className='itemsDisplayContainer'>
-            {
-              recipesArr.map((recipe, index) => (
-                <Items key={index} item={recipe} /> 
-              ))
-            }
-            <div className='PaginationWrapper'> 
-              <div className='pagination'>
-                <button className='nextPage' onClick={paginatePrevPage}>{'<'}</button>
-                <button className='previousPage' onClick={paginateNextPage}>{'>'}</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Routes>
+          <Route path='/' element={<ItemsContainer recipesArr={recipesArr} paginatePrevPage={paginatePrevPage} paginateNextPage={paginateNextPage} />} /> 
+          <Route path='/details/:name' element={<Recipe />} /> 
+          <Route path='*' element={<NotFoundPage />} /> 
+          {/* <Route path='/favourites/' element={} />  */}
+        </Routes>
       </div>
     </div>
   );

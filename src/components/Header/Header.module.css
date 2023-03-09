@@ -40,6 +40,10 @@ header {
     font-size: 120%;
 } 
 .searchTab, .favorites {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 3px; 
     padding: 3px 10px; 
     border-radius: 8px; 
     transition: background-color, color, 0.3s;

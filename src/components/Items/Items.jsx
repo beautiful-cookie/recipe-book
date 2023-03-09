@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import styles from './Items.module.css'; 
 
 const Items = ({item}) => {
   return(
     <div className={styles.itemWrapper}>
-        <div className={styles.pictureWrapper}>
+        <Link to={`/details/${item.recipe.label}`} className={styles.pictureWrapper}>
           <img src={item.recipe.image} alt="" />
-        </div>
+        </Link>
 
         <div className={styles.label}>
           <span>{item.recipe.label}</span>
@@ -14,7 +15,7 @@ const Items = ({item}) => {
         <div className={styles.ingridients}>
           <details>
             <ul className={styles.ingridientItemWrapper}>
-              {item.recipe.ingredients.map(element => (<li key={element.totalWeight}>{element.text}</li>))}
+              {item.recipe.ingredients.map((element, index) => (<li key={index}>{element.text}</li>))}
             </ul>
             <summary>
               Ingridient         
@@ -22,10 +23,12 @@ const Items = ({item}) => {
           </details>
         </div>
         <div className={styles.moreDetails}>
-          <div className={styles.btnDetails}>Подробнее</div>
+          <Link to={`/details/${item.recipe.label}`} className={styles.btnDetails}>
+            Подробнее
+          </Link>
         </div>
     </div>
   )
 } 
 
-export default Items; 
+export default Items;

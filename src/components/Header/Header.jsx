@@ -10,8 +10,8 @@ const Header = () => {
         <span className={styles.empty}></span>
         <span className={styles.logo}>Recipes</span>
         <div className={styles.tabs}>
-          <span className={styles.searchTab}> <SearchIcon /> Search</span>
-          <span className={styles.favorites}> <StarBorderIcon /> Favorites</span>
+          <span className={styles.searchTab}> <SearchIcon sx={{ fontSize: 20 }} /> Search</span>
+          <span className={styles.favorites}> <StarBorderIcon sx={{ fontSize: 20 }} /> Favorites</span>
         </div>
       </div>
     </header>
