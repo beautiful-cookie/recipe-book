@@ -129,7 +129,7 @@ const {recipesArr} = state
         <Search search={search} /> 
         <Routes>
           <Route path='/' element={<ItemsContainer recipesArr={recipesArr} paginatePrevPage={paginatePrevPage} paginateNextPage={paginateNextPage} />} /> 
-          <Route path='/details/:name' element={<Recipe />} /> 
+          <Route path='/details/:recipe_id' element={<Recipe />} /> 
           <Route path='*' element={<NotFoundPage />} /> 
           {/* <Route path='/favourites/' element={} />  */}
         </Routes>

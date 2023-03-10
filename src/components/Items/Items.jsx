@@ -2,9 +2,13 @@ import { Link } from 'react-router-dom';
 import styles from './Items.module.css'; 
 
 const Items = ({item}) => {
+
+  const recipe_uri = item.recipe.uri 
+  const recipe_id = recipe_uri.split('#')[1]
+
   return(
     <div className={styles.itemWrapper}>
-        <Link to={`/details/${item.recipe.label}`} className={styles.pictureWrapper}>
+        <Link to={`/details/${recipe_id}`} className={styles.pictureWrapper}>
           <img src={item.recipe.image} alt="" />
         </Link>
 
