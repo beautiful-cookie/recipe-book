@@ -3,4 +3,34 @@
   justify-content: center; 
   align-items: center; 
   flex-direction: column; 
+  margin-top: 5vh; 
+}
+
+.imageWrapper {
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+} 
+.imageWrapper img {
+  border-radius: 10px; 
+}
+
+.detailsWrapper {
+  width: 100%; 
+  margin-top: 5vh; 
+  padding: 0px 10px 0px 10px;  
+}
+.detailsContainer {
+  border: 1px solid black; 
+  border-radius: 8px; 
+}
+.detailsContainer p {
+  padding: 4px; 
+  border: 1px solid rgb(78, 78, 78); 
+  font-size: large;
+  transition: border-radius, 0.3s;
+}
+.detailsText {
+  font-weight: 500; 
 }
