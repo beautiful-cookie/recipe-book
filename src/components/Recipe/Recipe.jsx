@@ -13,6 +13,9 @@ const Recipe = (props) => {
   const [recipe_img, setRecipe_img] = useState(""); 
   const [recipe_calories, setRecipe_calories] = useState(""); 
   const [recipe_totalWeight, setRecipe_totalWeight] = useState(""); 
+  const [recipe_totalDaily, setRecipe_totalDaily] = useState({}); 
+  
+
 
   useEffect(() => {
     fetch(`${apiUrl}${recipe_id}?type=public&app_id=${appId}&app_key=${appKey}`)
@@ -24,6 +27,7 @@ const Recipe = (props) => {
       setRecipe_img(recipe.image) 
       setRecipe_calories(recipe.calories.toFixed(2)) 
       setRecipe_totalWeight(recipe.totalWeight.toFixed(2)) 
+      setRecipe_totalDaily(recipe.totalDaily)
     })
   }, [recipe_id]) 
 
@@ -44,7 +48,14 @@ const Recipe = (props) => {
             <span className={styles.detailsText}>Weight:</span> {recipe_totalWeight}
           </p>
           <p>
-            <span className={styles.detailsText}>Calories:</span> {recipe_calories}
+            <details className={styles.dailyNutrientsDetails}>
+              <ul>
+                {Object.entries(recipe_totalDaily).map(([key, nutrient]) => <li key={key}>{nutrient.label}: {Math.round(nutrient.quantity)}{nutrient.unit}</li>)}                
+              </ul>
+              <summary>
+                <span className={styles.detailsText}>Daily Nutrients:</span> 
+              </summary>
+            </details>
           </p>
         </div>
       </div> 

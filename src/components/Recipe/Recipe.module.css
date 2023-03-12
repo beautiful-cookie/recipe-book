@@ -34,3 +34,12 @@
 .detailsText {
   font-weight: 500; 
 }
+
+.dailyNutrientsDetails ul {
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: flex-start; 
+  flex-direction: column;
+  padding: 0px 30px;
+}
