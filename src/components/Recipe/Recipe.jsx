@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"; 
 import { useEffect, useState } from 'react'; 
 import styles from './Recipe.module.css'; 
+import IngredientItem from "./IngredientItem";
 
 const Recipe = (props) => {
 
@@ -14,6 +15,7 @@ const Recipe = (props) => {
   const [recipe_calories, setRecipe_calories] = useState(""); 
   const [recipe_totalWeight, setRecipe_totalWeight] = useState(""); 
   const [recipe_totalDaily, setRecipe_totalDaily] = useState({}); 
+  const [recipe_ingredients, setRecipe_ingredients] = useState([]); 
   
 
 
@@ -27,7 +29,8 @@ const Recipe = (props) => {
       setRecipe_img(recipe.image) 
       setRecipe_calories(recipe.calories.toFixed(2)) 
       setRecipe_totalWeight(recipe.totalWeight.toFixed(2)) 
-      setRecipe_totalDaily(recipe.totalDaily)
+      setRecipe_totalDaily(recipe.totalDaily) 
+      setRecipe_ingredients(recipe.ingredients) 
     })
   }, [recipe_id]) 
 
@@ -56,9 +59,17 @@ const Recipe = (props) => {
                 <span className={styles.detailsText}>Daily Nutrients:</span> 
               </summary>
             </details>
-          </p>
+          </p>           
+        </div> 
+      </div>  
+
+      <h3>Ingridients</h3> 
+
+      <div className={styles.ingridientsWrapper}>
+        <div className={styles.ingridientsContent}>
+          {recipe_ingredients.map(item => <IngredientItem item={item} />)} 
         </div>
-      </div> 
+      </div>
     </div>
   )
 } 

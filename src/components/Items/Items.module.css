@@ -4,8 +4,9 @@
     align-items: center;      
     flex-direction: column;
     flex: 30%; 
-    min-width: 30vh;
-    height: 60vh; 
+    min-width: 30vh; 
+    max-width: 30vh; 
+    height: 50vh; 
     border: 1px solid rgb(192, 161, 161); 
     border-radius: 10px; 
     box-shadow: 0 0 8px black; 

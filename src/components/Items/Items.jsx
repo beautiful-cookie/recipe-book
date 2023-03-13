@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 import styles from './Items.module.css'; 
 
 const Items = ({item}) => {
@@ -25,11 +25,6 @@ const Items = ({item}) => {
               Ingridient         
             </summary>
           </details>
-        </div>
-        <div className={styles.moreDetails}>
-          <Link to={`/details/${item.recipe.label}`} className={styles.btnDetails}>
-            Подробнее
-          </Link>
         </div>
     </div>
   )
