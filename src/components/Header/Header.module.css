@@ -43,6 +43,8 @@ header {
     display: flex; 
     justify-content: center; 
     align-items: center; 
+    text-decoration: none; 
+    color: black; 
     gap: 3px; 
     padding: 3px 10px; 
     border-radius: 8px; 
