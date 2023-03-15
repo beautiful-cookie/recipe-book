@@ -56,7 +56,10 @@ const Recipe = (props) => {
                 {Object.entries(recipe_totalDaily).map(([key, nutrient]) => <li key={key}>{nutrient.label}: {Math.round(nutrient.quantity)}{nutrient.unit}</li>)}                
               </ul>
               <summary>
-                <span className={styles.detailsText}>Daily Nutrients:</span> 
+                <span className={styles.detailsText}>Daily Nutrients:</span>
+                <span className={styles.moreDetailsWrapper}>
+                  <span className={styles.moreDetails}>More details</span>
+                </span>
               </summary>
             </details>
           </p>           

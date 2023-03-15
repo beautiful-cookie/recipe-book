@@ -29,47 +29,51 @@
   padding: 0px 10px 0px 10px;  
 }
 .detailsContainer {
-  width: 70%;
-  border: 1px solid black; 
+  width: 90%;
   border-radius: 8px; 
+  background-color: #e6e5e5; 
+  padding: 5px; 
+  display: flex; 
+  flex-direction: column;
+  gap: 10px; 
 }
 .detailsContainer p {
   padding: 4px; 
-  border: 1px solid rgb(78, 78, 78); 
   font-size: large;
-  transition: border-radius, 0.3s;
+  transition: border-radius, 0.3s; 
 }
-.detailsText {
+.detailsText { 
+  flex: 30%; 
   font-weight: 500; 
+}
+.moreDetailsWrapper {
+  flex: 70%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.moreDetails { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-size: small; 
+  width: 90%; 
+  height: 100%; 
+  color: rgb(0, 0, 0); 
+  background-color: #cfcfcf; 
+  border-radius: 8px;
+  transition: transform 0.2s;
+} 
+.moreDetails:hover {
+  transform: scale(0.9); 
 }
 
 .dailyNutrientsDetails summary {
-  position: relative;
   display: flex;
   list-style: none; 
   overflow: hidden;
 } 
-.dailyNutrientsDetails summary::before {
-  content: 'More details'; 
-  position: absolute;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  opacity: 0;
-  font-size: small; 
-  color: rgb(0, 0, 0); 
-  background-color: rgba(202, 202, 202, 0.5); 
-  border-radius: 5px;
-  width: 75%; 
-  height: 100%; 
-  top: 0; 
-  right: 0; 
-  transition: opacity, 0.2s;
-}
-.dailyNutrientsDetails summary:hover::before {
-  display: flex; 
-  opacity: 10;
-}
+
 .dailyNutrientsDetails ul {
   width: 100%; 
   display: flex; 
@@ -129,3 +133,15 @@
   max-height: 100%; 
   border-radius: 10px;
 } 
+
+@media screen and (max-width: 750px) {
+  .moreDetailsWrapper {
+    flex: 50%; 
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .moreDetailsWrapper {
+    flex: 30%; 
+  }
+}
