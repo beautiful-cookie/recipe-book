@@ -37,7 +37,9 @@ const Recipe = (props) => {
   return (
     <div className={styles.recipeWrapper}> 
       <div className={styles.imageWrapper}>
+        <div className={styles.prevBtn}>{'<'}</div>
         <img src={recipe_img} alt="" /> 
+        <div className={styles.nextBtn}>{'>'}</div>
       </div> 
 
       <h2>{recipe_name}</h2>
