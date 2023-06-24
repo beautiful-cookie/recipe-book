@@ -1,7 +1,8 @@
 import './App.css'; 
 import Header from './components/Header/Header';
 import Search from './components/Search/Search'; 
-import ItemsContainer from './components/Items/itemsContainer';
+import ItemsContainer from './components/Items/itemsContainer'; 
+import Carousel from './components/Carousel/Carousel'; 
 import React, { useReducer, useEffect } from 'react'; 
 import { Routes, Route, Link } from 'react-router-dom'; 
 import Recipe from './components/Recipe/Recipe';
@@ -76,7 +77,6 @@ function App() {
           type: 'SET_RECIPES', 
           recipes: recipesJSON.hits 
         })
-        console.log(recipesJSON);
       }
       if (recipesJSON._links.next) {
         dispatch({
@@ -127,6 +127,7 @@ const {recipesArr} = state
       <div className='recipes-page-wrapper'>
         <Header /> 
         <Search search={search} /> 
+        <Carousel /> 
         <Routes>
           <Route path='/' element={<ItemsContainer recipesArr={recipesArr} paginatePrevPage={paginatePrevPage} paginateNextPage={paginateNextPage} />} /> 
           <Route path='/details/:recipe_id' element={<Recipe />} /> 

@@ -19,7 +19,8 @@
 } 
 
 .recipes-page-wrapper {
-  max-width: 95%; 
+  max-width: 95vw; 
+  min-width: 90vw;
   min-height: 100%; 
   margin-top: 5vh;  
   border-radius: 50px; 
