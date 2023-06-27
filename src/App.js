@@ -4,7 +4,7 @@ import Search from './components/Search/Search';
 import ItemsContainer from './components/Items/itemsContainer'; 
 import Carousel from './components/Carousel/Carousel'; 
 import React, { useReducer, useEffect } from 'react'; 
-import { Routes, Route, Link } from 'react-router-dom'; 
+import { Routes, Route } from 'react-router-dom'; 
 import Recipe from './components/Recipe/Recipe';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 

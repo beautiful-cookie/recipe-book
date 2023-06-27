@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
+import { Link } from 'react-router-dom'; 
 import styles from './Carousel.module.css'; 
 import cn from 'classnames'; 
 
@@ -30,9 +31,11 @@ const Carousel = () => {
 
   return (
     <div className={styles.carouselWrapper}>
-      <div className={styles.carousel}       > 
-        {recipesList.slice(currentIndex, currentIndex + 4).map((image, index) => (
-            <img key={index} src={image.recipe.image} alt={`Slide ${index + 1}`} />
+      <div className={styles.carousel}> 
+        {recipesList.slice(currentIndex, currentIndex + 4).map((item, index) => (
+            <Link to={`/details/${item.recipe.uri.split('#')[1]}`} className={styles.pictureWrapper}>
+              <img key={index} src={item.recipe.image} alt={`Slide ${index + 1}`} />
+            </Link>
           ))}
       </div>
       <button className={cn(styles.carouselButton, styles.carouselButtonPrev)} onClick={prevSlide}>{'<'}</button> 
